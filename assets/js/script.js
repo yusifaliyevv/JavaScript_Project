@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       logoutBtn.classList.add("d-none");
       loginBtn.classList.remove("d-none");
       registerBtn.classList.remove("d-none");
-      usernameBtn.textContent = "👤 Sign up";
+      usernameBtn.innerHTML = '<i class="fa-regular fa-user fa-xl"></i> Sign up';
     }
   }
 

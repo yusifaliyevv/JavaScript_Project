@@ -69,16 +69,17 @@
           <!-- <ul class="nav_list">
             <li class="nav_list-item"><a href="./admin.html">Admin</a></li>
           </ul> -->
-          <div class="wrapper">
-            <a href="./admin.html" class="adminClass">Admin</a>
+          <div class="wrapper" style="display: flex; align-items: center;">
             <!-- <button class="username">Username</button> -->
             <div class="dropdown">
-              <button
+              <button style="display: flex; gap: 5px; align-items: center;"
                 class="btn btn-white newB"
                 type="button"
+                id="userDropdown"
                 data-bs-toggle="dropdown"
               >
-                <i class="fa-regular fa-user test"></i>
+                <i class="fa-regular fa-user fa-xl"></i>
+                Sign Up
               </button>
               <ul class="dropdown-menu">
                 <li>
@@ -97,15 +98,18 @@
                 </li>
               </ul>
             </div>
-            <a href="wishlist.html"
-              ><i class="fa-regular fa-heart wishlistpageicon font"></i
-              >Wishlist</a
-            >
-            <a href="basket.html" class="basketIcon">
-              <i class="fa-solid fa-cart-shopping basketpageicon font"></i>
-              <sup>0</sup>
-              Basket</a
-            >
+            <div>
+                <a style="display: flex; align-items: center; gap: 5px;" href="wishlist.html"
+                ><i class="fa-regular fa-heart fa-xl"></i
+                >Wishlist</a
+              >
+            </div>
+            <div>
+                <a style="display: flex; align-items: center; gap: 5px;" href="basket.html" class="basketIcon">
+                    <img src="./assets/icons/bag (1).png" alt="">
+                    Basket</a
+                  >
+            </div>
           </div>
         </nav>
       </div>
@@ -171,31 +175,6 @@
                     alt=""
                   />
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="container">
-            <div class="start col-lg-12 col-md-12 col-sm-12">
-              <div class="main col-lg-6 col-md-12 col-sm-12">
-                <span>40% off</span>
-                <h1>Backpack products</h1>
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content expound the actual teachings of the
-                  great explorer
-                </p>
-                <br /><br /><br />
-                <button>Shop now</button>
-              </div>
-              <div class="bagsIMG col-lg-6 col-md-12 col-sm-12">
-                <img
-                  class="secImg"
-                  src="./assets/images/5652baba89f40da1967f408bcdb1ee23.png"
-                  alt=""
-                />
               </div>
             </div>
           </div>
