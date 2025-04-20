@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       let card = document.createElement("div");
       card.classList.add("card");
       card.addEventListener("click", () => {
-        window.location.href = `product_detail.html?id=${product.id}`;
+        window.location.href = `product-detail.html?id=${product.id}`;
       });
 
       let image = document.createElement("div");
@@ -239,12 +239,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     let currentUser = isLogined ? isLogined : null;
 
     document.querySelector(".cards").innerHTML = "";
-    productsToRender.slice(0, 3).forEach((product) => {
+    productsToRender.slice(0, 6).forEach((product) => {
       let card = document.createElement("div");
       card.classList.add("card");
 
       card.addEventListener("click", () => {
-        window.location.href = `product_detail.html?id=${product.id}`;
+        window.location.href = `product-detail.html?id=${product.id}`;
       });
 
       let image = document.createElement("div");

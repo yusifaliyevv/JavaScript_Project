@@ -15,7 +15,7 @@ function createBasketItem() {
       image.classList.add("image");
       image.style.cursor = "pointer";
       image.addEventListener("click", () => {
-        window.location.href = `product_detail.html?id=${product.id}`;
+        window.location.href = `product-detail.html?id=${product.id}`;
       });
 
       let img = document.createElement("img");

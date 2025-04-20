@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let wishlistItem = document.createElement("div");
     wishlistItem.classList.add("card");
     wishlistItem.addEventListener("click", () => {
-      window.location.href = `product_detail.html?id=${product.id}`;
+      window.location.href = `product-detail.html?id=${product.id}`;
     });
 
     let image = document.createElement("div");

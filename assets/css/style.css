@@ -396,7 +396,6 @@ a {
 }
 .card-image img {
   width: 80%;
-  height: 80%;
   object-fit: cover;
 }
 .card-content {
