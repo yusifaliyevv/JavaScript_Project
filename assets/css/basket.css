@@ -6,7 +6,6 @@
   gap: 1.5rem;
   padding: 10px;
 }
-
 .basket-item {
   height: 211px;
   display: flex;
@@ -61,7 +60,6 @@
   line-height: 30.6px;
   color: #212121;
 }
-
 .basket-item .image {
   width: 175px;
   height: 137px;
@@ -72,13 +70,11 @@
 .basket-item .category {
   margin: 0;
 }
-
 .imgBasket {
   width: 100%;
   height: 100%;
   border-radius: 8px;
 }
-
 .count-area {
   width: 72px;
   height: 32px;
@@ -91,7 +87,6 @@
   padding: 0 5px;
   margin-top: 30px;
 }
-
 .bottom {
   background-color: #f9f9f9;
   margin-top: 10px;
@@ -148,7 +143,6 @@
 .minus-btn:disabled {
   cursor: not-allowed;
 }
-
 .empty {
   text-align: center;
   font-size: 1.5rem;

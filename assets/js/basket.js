@@ -68,32 +68,27 @@ function createBasketItem() {
       let wishlistBtn = document.createElement("button");
       wishlistBtn.classList.add("btn", "btn-white", "wishlist-btn");
       let heartIcon = document.createElement("i");
-      heartIcon.classList.add("fa-regular", "fa-heart","favIcon");
-      let favoriteText = document.createElement("span")
-      favoriteText.classList.add("favorite")
+      heartIcon.classList.add("fa-regular", "fa-heart", "favIcon");
+      let favoriteText = document.createElement("span");
+      favoriteText.classList.add("favorite");
       favoriteText.textContent = "Favorite";
-      wishlistBtn.append(heartIcon,favoriteText);
+      wishlistBtn.append(heartIcon, favoriteText);
       wishlistBtn.addEventListener("click", () =>
         toggleAddWishlist(product.id, heartIcon)
       );
 
-    
       let categoryCount = document.createElement("div");
       categoryCount.classList.add("category-count");
       categoryCount.append(category, countArea);
 
-     
       let removeBtnArea = document.createElement("div");
       removeBtnArea.classList.add("remove-btn-area");
-      removeBtnArea.append(wishlistBtn,removeBtn, );
-
-      
+      removeBtnArea.append(wishlistBtn, removeBtn);
 
       let cardInfo = document.createElement("div");
       cardInfo.classList.add("cardInfo");
       cardInfo.append(titlePrice, categoryCount, removeBtnArea);
 
-     
       countArea.append(minusBtn, count, plusBtn);
       image.append(img);
       basketItem.append(image, cardInfo);
@@ -111,34 +106,28 @@ function createBasketItem() {
     });
   }
 
-
-let bottom = document.querySelector(".bottom")
-bottom.appendChild(clearBasketBtn);
+  let bottom = document.querySelector(".bottom");
+  bottom.appendChild(clearBasketBtn);
   updateTotalPrice();
 }
-  let clearBasketBtn = document.createElement("button");
-clearBasketBtn.classList.add("btn","btn-outline-danger","clearAll");
+let clearBasketBtn = document.createElement("button");
+clearBasketBtn.classList.add("btn", "btn-outline-danger", "clearAll");
 clearBasketBtn.textContent = "Clear Basket";
 
 clearBasketBtn.addEventListener("click", clearBasket);
 
 function clearBasket() {
-  
   basket = [];
 
-  
   let basketItems = document.querySelectorAll(".basket-item");
-  basketItems.forEach(item => item.remove());
+  basketItems.forEach((item) => item.remove());
 
-  
   let userIndex = users.findIndex((user) => user.id === currentUser.id);
   users[userIndex].basket = [];
   localStorage.setItem("users", JSON.stringify(users));
 
-  
   updateTotalPrice();
 }
-
 
 function toggleAddWishlist(productId, heartElement) {
   if (!currentUser) {
@@ -161,19 +150,18 @@ function toggleAddWishlist(productId, heartElement) {
 
     heartElement.classList.remove("fa-solid");
     heartElement.classList.add("fa-regular");
-    heartElement.style.color="#212121"
+    heartElement.style.color = "#212121";
     let favorites = document.querySelectorAll(".favorite");
     favorites.forEach((favorite) => {
       if (favorite.productId === productId) {
         favorite.style.color = "#212121";
       }
-      
-    });   
-  
-    setInterval(()=>{
-      window.location.reload()
-    },1000)
-    
+    });
+
+    setInterval(() => {
+      window.location.reload();
+    }, 1000);
+
     toast("Product removed from wishlist");
   } else {
     let product = basket.find((product) => product.id === productId);
@@ -183,22 +171,18 @@ function toggleAddWishlist(productId, heartElement) {
 
     heartElement.classList.remove("fa-regular");
     heartElement.classList.add("fa-solid");
-    heartElement.style.color="#DF4244"
-    
+    heartElement.style.color = "#DF4244";
+
     let favorites = document.querySelectorAll(".favorite");
     favorites.forEach((favorite) => {
       if (favorite.productId === productId) {
         favorite.style.color = "#212121";
       }
-      
-    });    
-          
-         
+    });
 
     toast("Product added to wishlist");
   }
 }
-
 
 function incrementCount(
   productId,
@@ -302,9 +286,6 @@ function toast(text) {
 
 document.addEventListener("DOMContentLoaded", createBasketItem());
 
-
-
-
 //! nav
 document.addEventListener("DOMContentLoaded", async () => {
   let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -322,17 +303,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   let logoutBtn = document.querySelector(".logout");
   let curentUser = users.find((user) => user.isLogined === true);
 
-  
-
   let searchInput = document.querySelector(".search-input");
   let searchBtn = document.querySelector(".search-btn");
   let searchResultsList = document.querySelector(".search-results");
 
-  
-
-// !filtereme
-
-
+  // !filtereme
 
   searchBtn?.addEventListener("click", () => {
     let searchvalue = searchInput.value.trim();
@@ -342,7 +317,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     createUserCard(filteredProducts);
     renderProducts(filteredProducts);
-    updateSearchResults(filteredProducts)
+    updateSearchResults(filteredProducts);
   });
 
   searchInput?.addEventListener("input", () => {
@@ -353,9 +328,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     createUserCard(filteredProducts);
     renderProducts(filteredProducts);
-    updateSearchResults(filteredProducts)
+    updateSearchResults(filteredProducts);
   });
-
 
   function updateSearchResults(filteredProducts) {
     searchResultsList.innerHTML = "";
@@ -366,13 +340,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       listItem.textContent = product.title;
       // let searchArea = document.querySelector(".search-results")
 
-
       let image = document.createElement("div");
       image.classList.add("search-image");
       let img = document.createElement("img");
       img.src = product.image;
       image.append(img);
-      listItem.appendChild(image)
+      listItem.appendChild(image);
 
       listItem.addEventListener("click", () => {
         window.location.href = `product-detail.html?id=${product.id}`;
@@ -412,16 +385,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       curentUser.isLogined = false;
       localStorage.setItem("users", JSON.stringify(users));
       updateUserStatus();
-      window.location.href = "index.html"; 
+      window.location.href = "index.html";
     }
   }
 
   logoutBtn.addEventListener("click", logout);
-
-  
-
- 
-  
 
   function toggleAddWishlist(productId, heartElement) {
     if (!curentUser) {
@@ -500,8 +468,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     basketElement.textContent = basketCount;
   }
 
-
-
   function toast(text) {
     Toastify({
       text: `${text}`,
@@ -518,7 +484,3 @@ document.addEventListener("DOMContentLoaded", async () => {
   updateBasketCount();
   updateUserStatus();
 });
-
-
-
-

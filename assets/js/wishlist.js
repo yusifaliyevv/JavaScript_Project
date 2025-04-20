@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let wishlistItem = document.createElement("div");
     wishlistItem.classList.add("card");
     wishlistItem.addEventListener("click", () => {
-        window.location.href = `product_detail.html?id=${product.id}`;
+      window.location.href = `product_detail.html?id=${product.id}`;
     });
 
     let image = document.createElement("div");
@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let removeBtn = document.createElement("button");
     removeBtn.classList.add("btn", "btn-light", "remove-btn");
-    removeBtn.innerHTML = `<i class="fa-solid fa-x"></i>`
+    removeBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
     removeBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); 
-        removeItem(product.id);
+      e.stopPropagation();
+      removeItem(product.id);
     });
 
     // Rating stars (optional based on your requirement)
@@ -43,30 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
     star.classList.add("fa-solid", "fa-star", "starCard");
 
     for (let i = 0; i < 5; i++) {
-        let starClone = star.cloneNode(true);
-        starArea.appendChild(starClone);
+      let starClone = star.cloneNode(true);
+      starArea.appendChild(starClone);
     }
 
     function removeItem(productId) {
-        let userIndex = users.findIndex((user) => user.id === currentUser.id);
-        let productIndex = currentUser.wishList.findIndex(
-            (product) => product.id === productId
-        );
-        if (productIndex !== -1) {
-            currentUser.wishList.splice(productIndex, 1);
-            users[userIndex] = currentUser;
-            localStorage.setItem("users", JSON.stringify(users));
-            toast("Item removed from wishlist");
-            setTimeout(() => {
-                window.location.reload();
-            }, 1000);
-        }
+      let userIndex = users.findIndex((user) => user.id === currentUser.id);
+      let productIndex = currentUser.wishList.findIndex(
+        (product) => product.id === productId
+      );
+      if (productIndex !== -1) {
+        currentUser.wishList.splice(productIndex, 1);
+        users[userIndex] = currentUser;
+        localStorage.setItem("users", JSON.stringify(users));
+        toast("Item removed from wishlist");
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+      }
     }
 
     cardContent.append(cardTitle, category, price);
     cardFooter.append(removeBtn);
     image.appendChild(img);
-    wishlistItem.append( image, starArea, cardContent, cardFooter);
+    wishlistItem.append(image, starArea, cardContent, cardFooter);
 
     let wishlistContainer = document.querySelector(".wishlist");
     wishlistContainer.appendChild(wishlistItem);
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardTitle.textContent = product.title.slice(0, 30) + " ...";
     category.textContent = product.category;
     price.textContent = `$ ${product.price}`;
-}
+  }
 
   if (currentUser.wishList.length > 0) {
     currentUser.wishList.forEach((product) => {
@@ -102,8 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
 //! nav
 document.addEventListener("DOMContentLoaded", async () => {
   let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -121,17 +119,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   let logoutBtn = document.querySelector(".logout");
   let curentUser = users.find((user) => user.isLogined === true);
 
-  
-
   let searchInput = document.querySelector(".search-input");
   let searchBtn = document.querySelector(".search-btn");
   let searchResultsList = document.querySelector(".search-results");
 
-  
-
-// !filtereme
-
-
+  // !filtereme
 
   searchBtn?.addEventListener("click", () => {
     let searchvalue = searchInput.value.trim();
@@ -141,7 +133,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     createUserCard(filteredProducts);
     renderProducts(filteredProducts);
-    updateSearchResults(filteredProducts)
+    updateSearchResults(filteredProducts);
   });
 
   searchInput?.addEventListener("input", () => {
@@ -152,9 +144,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     createUserCard(filteredProducts);
     renderProducts(filteredProducts);
-    updateSearchResults(filteredProducts)
+    updateSearchResults(filteredProducts);
   });
-
 
   function updateSearchResults(filteredProducts) {
     searchResultsList.innerHTML = "";
@@ -165,13 +156,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       listItem.textContent = product.title;
       // let searchArea = document.querySelector(".search-results")
 
-
       let image = document.createElement("div");
       image.classList.add("search-image");
       let img = document.createElement("img");
       img.src = product.image;
       image.append(img);
-      listItem.appendChild(image)
+      listItem.appendChild(image);
 
       listItem.addEventListener("click", () => {
         window.location.href = `product-detail.html?id=${product.id}`;
@@ -211,17 +201,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       curentUser.isLogined = false;
       localStorage.setItem("users", JSON.stringify(users));
       updateUserStatus();
-       
-       window.location.href = "index.html"; 
+
+      window.location.href = "index.html";
     }
   }
 
   logoutBtn.addEventListener("click", logout);
-
-  
-
- 
-  
 
   function toggleAddWishlist(productId, heartElement) {
     if (!curentUser) {
@@ -299,11 +284,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
     basketElement.textContent = basketCount;
   }
-
-  
-  
-
-
 
   function toast(text) {
     Toastify({

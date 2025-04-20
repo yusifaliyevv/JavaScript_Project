@@ -9,26 +9,21 @@
   outline: none;
   box-sizing: border-box;
 }
-
 html {
   font-size: 62.5%;
 }
-
 body {
   font-size: 1.6rem;
   font-family: Poppins;
 }
-
 a {
   text-decoration: none;
   color: var(--main-text-color);
 }
-
 ul,
 ol {
   list-style-type: none;
 }
-
 .container {
   max-width: 1200px;
   width: 100%;

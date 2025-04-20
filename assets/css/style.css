@@ -1,7 +1,6 @@
 #start {
   background: #007878;
 }
-
 .header_top {
   width: 100%;
   height: 4.8rem;
@@ -9,7 +8,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .headtext {
   width: 100%;
   display: flex;
@@ -48,7 +46,6 @@
 .headtext .service a {
   color: white;
 }
-
 .mynavbar {
   display: flex;
   flex-wrap: wrap;
@@ -94,7 +91,6 @@ a {
   align-items: center;
   gap: 10px;
 }
-
 .dropdown-menu {
   max-width: 150px !important;
   position: relative;
@@ -115,14 +111,12 @@ a {
   top: 3px;
   right: -15px;
 }
-
 .control-panel {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
 }
-
 .control-panel .search-box {
   display: flex;
   align-items: center;
@@ -143,7 +137,6 @@ a {
   border: none;
   height: 48px;
   background: #f7f9fc;
-
   padding: 5px;
   padding-left: 15px;
   outline: none;
@@ -154,9 +147,6 @@ a {
   padding: 5px 15px;
   border-radius: 0 !important;
 }
-
-/* sersch */
-
 .search-result {
   display: flex;
   position: absolute;
@@ -187,7 +177,6 @@ a {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 .search-result-item:hover {
   background-color: #f5f5f5;
   padding-left: 20px;
@@ -197,7 +186,6 @@ a {
   outline: none;
   background-color: #e8e8e8;
 }
-
 .products {
   width: 80rem;
   display: flex;
@@ -210,7 +198,6 @@ a {
   text-align: left;
   cursor: pointer;
 }
-
 .sliderContainer {
   background: #ffe2e0;
   margin-top: 24px;
@@ -218,11 +205,9 @@ a {
   position: relative;
   height: 630px;
 }
-
 .slides {
   display: flex;
 }
-
 .slide {
   min-width: 100%;
   height: 500px;
@@ -231,7 +216,6 @@ a {
   align-items: center;
   padding: 60px 0px 0px 50px;
 }
-
 .prev,
 .next {
   position: absolute;
@@ -240,7 +224,6 @@ a {
   font-size: 30px;
   cursor: pointer;
 }
-
 .next {
   right: 15px;
 }
@@ -250,7 +233,6 @@ a {
 .womBagImg {
   padding-top: 40px;
 }
-
 .start {
   gap: 4rem;
   display: flex;
@@ -301,7 +283,6 @@ a {
   width: 500px;
   height: 500px;
 }
-
 #payment {
   background-color: #f7f7f7;
   height: 144px;
@@ -309,7 +290,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 .bagChoose {
   margin-top: 80px;
   display: flex;
@@ -381,7 +361,6 @@ a {
     height: 194px;
   }
 }
-
 .viewCard {
   margin-top: 3px;
   display: flex;
@@ -389,17 +368,14 @@ a {
   gap: 23px;
   justify-content: flex-start;
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 23px;
   justify-content: flex-start;
 }
-
 .card {
   background: #f9f9f9;
-
   width: 360px;
   border-radius: 8px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -407,7 +383,6 @@ a {
   position: relative;
   border: none;
 }
-
 .card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -419,17 +394,14 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 .card-image img {
   width: 80%;
   height: 80%;
   object-fit: cover;
 }
-
 .card-content {
   padding: 20px;
 }
-
 .card-title {
   font-family: Rubik;
   font-size: 16px;
@@ -439,20 +411,17 @@ a {
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
-
 .card-category {
   font-size: 14px;
   color: #555555;
   margin-bottom: 15px;
 }
-
 .card-description {
   font-size: 14px;
   line-height: 1.6;
   color: #666666;
   margin-bottom: 20px;
 }
-
 .card-footer {
   background: #f9f9f9;
   border: none;
@@ -461,7 +430,6 @@ a {
   align-items: center;
   gap: 10px;
 }
-
 .card-price {
   font-family: Poppins;
   font-size: 20px;
@@ -473,18 +441,15 @@ a {
 
   color: #f75145;
 }
-
 .card-rating {
   font-size: 14px;
   color: #ff9800;
 }
-
 .card-rating span:last-child {
   color: #999999;
   font-size: 12px;
   margin-left: 5px;
 }
-
 .card-heart {
   font-size: 20px;
   position: absolute;
@@ -495,7 +460,6 @@ a {
 .card-heart:hover {
   color: #df4244;
 }
-
 .add-to-cart {
   border: 1px solid #212121;
   text-align: center;
@@ -606,14 +570,12 @@ footer {
   gap: 10px;
   opacity: 0.7;
 }
-
 .sendMessege {
   margin-top: 35px;
 }
 .footBottomRight {
   margin-top: 56px;
 }
-
 .dark {
   font-family: Rubik;
   font-size: 18px;
@@ -647,7 +609,6 @@ footer {
 .test {
   display: flex;
   gap: 3px;
-
   font-size: 16px;
 }
 .font {

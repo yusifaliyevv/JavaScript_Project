@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", async () => {
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -21,8 +20,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   let searchInput = document.querySelector(".search-input");
   let searchBtn = document.querySelector(".search-btn");
   let searchResultsList = document.querySelector(".search-results");
- 
-
 
   let lowToHighBtn = document.querySelector(".low-to-high");
   let highToLowBtn = document.querySelector(".high-to-low");
@@ -33,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     renderProducts(filteredProducts);
     createUserCard(filteredProducts);
-    
   });
 
   highToLowBtn?.addEventListener("click", () => {
@@ -69,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     createUserCard(filteredProducts);
     renderProducts(filteredProducts);
-    updateSearchResults(filteredProducts)
+    updateSearchResults(filteredProducts);
   });
 
   searchInput?.addEventListener("input", () => {
@@ -80,9 +76,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".cards").innerHTML = "";
     createUserCard(filteredProducts);
     renderProducts(filteredProducts);
-    updateSearchResults(filteredProducts)
+    updateSearchResults(filteredProducts);
   });
-
 
   function updateSearchResults(filteredProducts) {
     searchResultsList.innerHTML = "";
@@ -93,13 +88,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       listItem.textContent = product.title;
       // let searchArea = document.querySelector(".search-results")
 
-
       let image = document.createElement("div");
       image.classList.add("search-image");
       let img = document.createElement("img");
       img.src = product.image;
       image.append(img);
-      listItem.appendChild(image)
+      listItem.appendChild(image);
 
       listItem.addEventListener("click", () => {
         window.location.href = `product-detail.html?id=${product.id}`;
@@ -123,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let usernameBtn = document.querySelector(".newB");
     if (isLogined) {
       usernameBtn.textContent = "";
-      
+
       usernameBtn.textContent = isLogined.username;
       loginBtn.classList.add("d-none");
       registerBtn.classList.add("d-none");
@@ -140,18 +134,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (curentUser) {
       curentUser.isLogined = false;
       localStorage.setItem("users", JSON.stringify(users));
-      window.location.reload()
+      window.location.reload();
       updateUserStatus();
     }
   }
 
-
-
-
   logoutBtn.addEventListener("click", logout);
 
   function createUserCard(filteredProducts) {
-    filteredProducts.slice(0,0).forEach((product) => {
+    filteredProducts.slice(0, 0).forEach((product) => {
       let card = document.createElement("div");
       card.classList.add("card");
       card.addEventListener("click", () => {
@@ -179,24 +170,23 @@ document.addEventListener("DOMContentLoaded", async () => {
       let ratingStar = document.createElement("span");
       let count = document.createElement("span");
       let heart = document.createElement("i");
-      let starArea =document.createElement("div");
-      starArea.classList.add("starArea")
-       let star = document.createElement("i")
-       star.classList.add("fa-solid", "fa-star", "starCard")
+      let starArea = document.createElement("div");
+      starArea.classList.add("starArea");
+      let star = document.createElement("i");
+      star.classList.add("fa-solid", "fa-star", "starCard");
 
-       let star1 = document.createElement("i")
-       star1.classList.add("fa-solid", "fa-star", "starCard")
+      let star1 = document.createElement("i");
+      star1.classList.add("fa-solid", "fa-star", "starCard");
 
-       let star2 = document.createElement("i")
-       star2.classList.add("fa-solid", "fa-star", "starCard")
+      let star2 = document.createElement("i");
+      star2.classList.add("fa-solid", "fa-star", "starCard");
 
-       let star3 = document.createElement("i")
-       star3.classList.add("fa-solid", "fa-star", "starCard")
+      let star3 = document.createElement("i");
+      star3.classList.add("fa-solid", "fa-star", "starCard");
 
-       let star4 = document.createElement("i")
-       star4.classList.add("fa-solid", "fa-star", "starCard")
-       starArea.append(star,star1,star2,star3,star4)
-
+      let star4 = document.createElement("i");
+      star4.classList.add("fa-solid", "fa-star", "starCard");
+      starArea.append(star, star1, star2, star3, star4);
 
       heart.classList.add("fa-regular", "fa-heart", "card-heart");
       heart.addEventListener("click", (e) => {
@@ -213,28 +203,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         addBasket(product.id);
       });
 
-
       // let viewAll = document.querySelector(".allProduct");
 
       // viewAll.addEventListener("click", () => {
       //   let slices = document.querySelectorAll(".slice");
       //   let cards = document.querySelector(".cards");
       //   cards.style.display="flex"
-        
+
       //   slices.forEach(slice => {
       //     slice.style.display = "none";
-          
+
       //   });
       // });
 
       rating.append(ratingStar, count);
       cardFooter.append(price, rating);
-      cardContent.append(cardTitle,  cardFooter);
+      cardContent.append(cardTitle, cardFooter);
       image.append(img);
-      card.append(heart, image,starArea, cardContent, addToCart);
+      card.append(heart, image, starArea, cardContent, addToCart);
       let cards = document.querySelector(".cards");
       cards?.append(card);
-      
 
       img.src = product.image;
       cardTitle.textContent = product.title.slice(0, 30) + " ...";
@@ -246,13 +234,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function renderProducts(productsToRender) {
-
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let isLogined = users.find((user) => user.isLogined === true);
     let currentUser = isLogined ? isLogined : null;
 
-    document.querySelector(".cards").innerHTML = ""; 
-    productsToRender.slice(0,3).forEach((product) => {
+    document.querySelector(".cards").innerHTML = "";
+    productsToRender.slice(0, 3).forEach((product) => {
       let card = document.createElement("div");
       card.classList.add("card");
 
@@ -318,7 +305,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       cardContent.append(cardTitle, category, cardFooter);
       image.append(img);
       card.append(heart, image, cardContent, addToCart);
-      
+
       let cards = document.querySelector(".cards");
       cards.append(card);
 
@@ -331,10 +318,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       count.textContent = `$${product.rating.count}`;
     });
   }
-  
 
   function toggleAddWishlist(productId, heartElement) {
-
     if (!curentUser) {
       toast("Please login to add wishlist");
 
@@ -358,7 +343,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       heartElement.classList.add("fa-regular");
 
       //! window lacotaion
-      window.location.reload()
+      window.location.reload();
 
       toast("Product removed from wishlist");
     } else {
@@ -417,46 +402,43 @@ document.addEventListener("DOMContentLoaded", async () => {
   const sliderContainer = document.querySelector(".sliderContainer");
   const slides = document.querySelector(".slides");
   const slide = document.querySelectorAll(".slide");
-  
+
   sliderContainer?.addEventListener("mouseover", stopAutoSlide);
-  sliderContainer?.addEventListener("mouseleave", startAutoSlide); 
-  
+  sliderContainer?.addEventListener("mouseleave", startAutoSlide);
+
   let currentIndex = 0;
-  
+
   const nextBtn = document.querySelector(".next");
   const prevBtn = document.querySelector(".prev");
-  
+
   const nextSlide = () => {
     currentIndex = (currentIndex + 1) % slide.length;
     updateSlider();
   };
-  
+
   const prevSlide = () => {
     currentIndex = (currentIndex - 1 + slide.length) % slide.length;
     updateSlider();
   };
-  
+
   nextBtn?.addEventListener("click", nextSlide);
   prevBtn?.addEventListener("click", prevSlide);
-  
+
   function updateSlider() {
     const newTranform = -currentIndex * 100 + "%";
     slides.style.transform = `translateX(${newTranform})`;
   }
-  
+
   let interval;
-  
+
   function startAutoSlide() {
     interval = setInterval(nextSlide, 2000);
   }
-  
+
   function stopAutoSlide() {
     clearInterval(interval);
   }
   startAutoSlide();
-  
-
-
 
   function toast(text) {
     Toastify({
