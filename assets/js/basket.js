@@ -390,70 +390,33 @@ document.addEventListener("DOMContentLoaded", async () => {
   //   createUserCard(filteredProducts);
   // });
 
-  // function updateUserStatus() {
-  //   let users = JSON.parse(localStorage.getItem("users")) || [];
-  //   let isLogined = users.find((user) => user.isLogined === true);
-  //   let usernameBtn = document.querySelector(".username");
-  //   if (isLogined) {
-  //     usernameBtn.textContent = isLogined.username;
-  //     loginBtn.classList.add("d-none");
-  //     registerBtn.classList.add("d-none");
-  //     logoutBtn.classList.remove("d-none");
-  //   } else {
-  //     logoutBtn.classList.add("d-none");
-  //     loginBtn.classList.remove("d-none");
-  //     registerBtn.classList.remove("d-none");
-  //     usernameBtn.textContent = "Username";
-  //   }
-  // }
-
-  // function logout() {
-  //   if (curentUser) {
-  //     curentUser.isLogined = false;
-  //     localStorage.setItem("users", JSON.stringify(users));
-  //     updateUserStatus();
-  //     window.location.href = "index.html"; 
-  //   }
-  // }
-
-  let userDropdown = document.querySelector("#userDropdown");
-  
   function updateUserStatus() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let isLogined = users.find((user) => user.isLogined === true);
-  
+    let usernameBtn = document.querySelector(".username");
     if (isLogined) {
-      // Username göstər
-      userDropdown.innerHTML = `<i class="fa-regular fa-user"></i> ${isLogined.username}`;
+      usernameBtn.textContent = isLogined.username;
       loginBtn.classList.add("d-none");
       registerBtn.classList.add("d-none");
       logoutBtn.classList.remove("d-none");
     } else {
-      // Default vəziyyət
-      userDropdown.innerHTML = `<i class="fa-regular fa-user"></i> Sign Up`;
       logoutBtn.classList.add("d-none");
       loginBtn.classList.remove("d-none");
       registerBtn.classList.remove("d-none");
+      usernameBtn.textContent = "Username";
     }
   }
-  
+
   function logout() {
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-    let currentUser = users.find((user) => user.isLogined === true);
-  
-    if (currentUser) {
-      currentUser.isLogined = false;
+    if (curentUser) {
+      curentUser.isLogined = false;
       localStorage.setItem("users", JSON.stringify(users));
       updateUserStatus();
-      window.location.href = "index.html";
+      window.location.href = "index.html"; 
     }
   }
-  
-  // Logout click event
+
   logoutBtn.addEventListener("click", logout);
-  
-  // Sayt açılan kimi status yoxla
-  updateUserStatus();
 
   
 
@@ -537,9 +500,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     basketElement.textContent = basketCount;
   }
 
-  
-  
-
 
 
   function toast(text) {
@@ -548,8 +508,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       duration: 1000,
       gravity: "top",
       position: "right",
+      className: "custom-toast",
+      stopOnFocus: true,
       style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        background: "linear-gradient(45deg, #ff6a00, #ee0979)",
       },
     }).showToast();
   }

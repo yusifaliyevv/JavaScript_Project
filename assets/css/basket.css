@@ -167,13 +167,12 @@
     display: none;
   }
 }
-.basketInner{
+.basketInner {
   margin-top: 110px;
 }
-.clearAll{
+.clearAll {
   margin-top: 20px;
   width: 100%;
   height: 40px;
   font-size: 16px;
-
 }

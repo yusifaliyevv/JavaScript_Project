@@ -1,12 +1,10 @@
 #start {
-  height: 48px;
   background: #007878;
-  display: flex;
-  align-items: center;
 }
 
 .header_top {
   width: 100%;
+  height: 4.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -211,6 +209,14 @@ a {
   line-height: 27.2px;
   text-align: left;
   cursor: pointer;
+}
+
+.sliderContainer {
+  background: #ffe2e0;
+  margin-top: 24px;
+  overflow: hidden;
+  position: relative;
+  height: 630px;
 }
 
 .slides {
@@ -422,7 +428,6 @@ a {
   height: 80%;
   object-fit: cover;
 }
-
 
 .card-content {
   padding: 20px;

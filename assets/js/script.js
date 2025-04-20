@@ -15,15 +15,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   let logoutBtn = document.querySelector(".logout");
   let curentUser = users.find((user) => user.isLogined === true);
 
-  // SORTING
   let azBtn = document.querySelector(".az");
   let zaBtn = document.querySelector(".za");
 
   let searchInput = document.querySelector(".search-input");
   let searchBtn = document.querySelector(".search-btn");
   let searchResultsList = document.querySelector(".search-results");
+ 
 
-  // FILTERLEME
+
   let lowToHighBtn = document.querySelector(".low-to-high");
   let highToLowBtn = document.querySelector(".high-to-low");
 
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       logoutBtn.classList.add("d-none");
       loginBtn.classList.remove("d-none");
       registerBtn.classList.remove("d-none");
-      usernameBtn.innerHTML = '<i class="fa-regular fa-user fa-xl"></i> Sign up';
+      usernameBtn.textContent = "👤 Sign up";
     }
   }
 
@@ -146,7 +146,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 
-  
+
+
   logoutBtn.addEventListener("click", logout);
 
   function createUserCard(filteredProducts) {
@@ -463,6 +464,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       duration: 1000,
       gravity: "top",
       position: "right",
+      className: "custom-toast",
+      stopOnFocus: true,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
       },

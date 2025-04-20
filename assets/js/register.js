@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         id: id,
         wishList: [],
         basket: [],
-        role: users.length === 0 ? "admin" : "user", 
+        role: users.length === 0 ? "" : "user", 
       };
       users.push(newUser);
       localStorage.setItem("users", JSON.stringify(users));
@@ -47,8 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 2000,
       gravity: "top",
       position: "right",
+      className: "custom-toast",
+      stopOnFocus: true,
       style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        background: "linear-gradient(45deg, #ff6a00, #ee0979)",
       },
     }).showToast();
   }

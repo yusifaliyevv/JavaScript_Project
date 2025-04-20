@@ -19,23 +19,22 @@ h1 {
   margin-bottom: 20px;
 }
 
-.logNextReg{
+.logNextReg {
   margin-top: 10px;
   text-align: center;
   font-family: Poppins;
   font-size: 16px;
   font-weight: bold;
   line-height: 23.8px;
- color: #555555;
-
+  color: #555555;
 }
-.linkReg{
+.linkReg {
   font-weight: bold;
   text-decoration: none;
   color: #000;
 }
 
-.form-label{
+.form-label {
   font-weight: bold;
 }
 
@@ -43,17 +42,17 @@ h1 {
 #surname,
 #username,
 #email,
-#password{
+#password {
   width: 340px;
   height: 48px;
   border: 1px solid rgba(44, 44, 44, 0.25);
   border-radius: 8px;
 }
 
-.submit{
+.submit {
   margin-top: 30px;
   width: 100%;
-  background-color: #F75145;
+  background-color: #f75145;
   height: 52px;
   color: white;
   border: none;
